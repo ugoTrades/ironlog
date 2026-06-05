@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate IronLog Icons</title></head>
+<body style="background:#111;color:#fff;font-family:sans-serif;padding:40px">
+<h1>IronLog Icon Generator</h1>
+<p>Right-click each image below and "Save image as..." to save the PNGs.</p>
+<div id="output" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px"></div>
+<script>
+const sizes = [
+  {name: 'icon-192.png', size: 192},
+  {name: 'icon-512.png', size: 512},
+  {name: 'apple-touch-icon.png', size: 180},
+];
+const container = document.getElementById('output');
+
+sizes.forEach(({name, size}) => {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  const r = size * 0.2;
+
+  // Background
+  ctx.beginPath();
+  ctx.roundRect(0, 0, size, size, r);
+  ctx.fillStyle = '#060B14';
+  ctx.fill();
+
+  // Inner bg
+  ctx.beginPath();
+  ctx.roundRect(size*0.02, size*0.02, size*0.96, size*0.96, r*0.9);
+  ctx.fillStyle = '#0A1628';
+  ctx.fill();
+
+  const cx = size/2, cy = size*0.44;
+  const barW = size*0.39, plateW = size*0.063, plateH = size*0.156;
+  const smallW = size*0.043, smallH = size*0.102;
+
+  // Bar
+  ctx.strokeStyle = '#06B6D4';
+  ctx.lineWidth = size*0.027;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(cx - barW, cy);
+  ctx.lineTo(cx + barW, cy);
+  ctx.stroke();
+
+  // Main plates
+  ctx.fillStyle = '#06B6D4';
+  const round = (x,y,w,h,r) => { ctx.beginPath(); ctx.roundRect(x,y,w,h,r); ctx.fill(); };
+  round(cx - barW - plateW, cy - plateH, plateW, plateH*2, size*0.015);
+  round(cx + barW, cy - plateH, plateW, plateH*2, size*0.015);
+
+  // Small plates
+  ctx.globalAlpha = 0.6;
+  round(cx - barW - plateW - smallW - size*0.015, cy - smallH, smallW, smallH*2, size*0.012);
+  round(cx + barW + plateW + size*0.015, cy - smallH, smallW, smallH*2, size*0.012);
+  ctx.globalAlpha = 1;
+
+  // Text
+  ctx.fillStyle = '#06B6D4';
+  ctx.font = `900 ${size*0.11}px Inter,system-ui,sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.letterSpacing = `${size*0.02}px`;
+  ctx.fillText('IRONLOG', cx, cy + size*0.28);
+
+  const div = document.createElement('div');
+  div.innerHTML = `<p>${name} (${size}x${size})</p>`;
+  const img = new Image();
+  img.src = canvas.toDataURL('image/png');
+  img.style.cssText = `width:${Math.min(size,200)}px;border:1px solid #333;border-radius:${Math.min(size,200)*0.2}px`;
+  div.appendChild(img);
+
+  const link = document.createElement('a');
+  link.href = canvas.toDataURL('image/png');
+  link.download = name;
+  link.textContent = `Download ${name}`;
+  link.style.cssText = 'display:block;color:#06B6D4;margin-top:8px';
+  div.appendChild(link);
+
+  container.appendChild(div);
+});
+</script>
+</body>
+</html>
