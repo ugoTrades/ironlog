@@ -37,7 +37,7 @@ function CalHeatmap({ workouts }) {
               <div key={di}
                 title={`${c.date.toLocaleDateString('it-IT')}: ${(c.vol / 1000).toFixed(1)}t`}
                 className={`w-[13px] h-[13px] rounded-[3px] flex-shrink-0 transition-all duration-300 ${c.isToday ? 'ring-1 ring-accent ring-offset-1 ring-offset-bg' : ''}`}
-                style={{ background: c.vol > 0 ? `rgba(6,182,212,${c.int})` : 'rgba(255,255,255,0.03)' }}
+                style={{ background: c.vol > 0 ? `rgba(204,204,204,${c.int})` : 'rgba(255,255,255,0.03)' }}
               />
             ))}
           </div>
@@ -46,7 +46,7 @@ function CalHeatmap({ workouts }) {
       <div className="flex items-center gap-1.5 mt-2 justify-end">
         <span className="text-[9px] text-text-muted">Meno</span>
         {[0.05, 0.2, 0.4, 0.7, 1].map(i => (
-          <div key={i} className="w-[9px] h-[9px] rounded-[3px]" style={{ background: `rgba(6,182,212,${i})` }} />
+          <div key={i} className="w-[9px] h-[9px] rounded-[3px]" style={{ background: `rgba(204,204,204,${i})` }} />
         ))}
         <span className="text-[9px] text-text-muted">Più</span>
       </div>

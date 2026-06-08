@@ -68,7 +68,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm relative z-10 animate-fade-in">
         {/* Logo */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center justify-center w-28 h-28 rounded-3xl bg-black mb-4 animate-float shadow-[0_0_40px_rgba(6,182,212,0.15)] overflow-hidden">
+          <div className="inline-flex items-center justify-center w-28 h-28 rounded-3xl bg-black mb-4 animate-float shadow-[0_0_40px_rgba(204,204,204,0.15)] overflow-hidden">
             <img src="/logo.png" alt="IronLog" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
           </div>
           <p className="text-text-muted text-xs tracking-[0.25em] mt-2 font-medium">TRACK · PROGRESS · DOMINATE</p>

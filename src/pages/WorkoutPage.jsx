@@ -548,7 +548,7 @@ export default function WorkoutPage() {
 
   return (
     <div className="px-4 pt-3 pb-4 animate-fade-in">
-      <div className="bg-bg-card border border-accent/20 rounded-2xl p-4 mb-4 shadow-[0_0_24px_rgba(6,182,212,0.08)]">
+      <div className="bg-bg-card border border-accent/20 rounded-2xl p-4 mb-4 shadow-[0_0_24px_rgba(204,204,204,0.08)]">
         <div className="flex items-center gap-3 mb-3">
           <div className="flex-1">
             <div className="text-lg font-bold text-accent">{dayLabel}</div>

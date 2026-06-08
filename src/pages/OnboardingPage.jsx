@@ -58,7 +58,7 @@ export default function OnboardingPage() {
     <div className={wrap}>
       <div className={glow} />
       <div className="relative z-10 text-center animate-fade-in">
-        <div className="inline-flex items-center justify-center w-40 h-40 rounded-3xl bg-black mb-6 animate-float shadow-[0_0_60px_rgba(6,182,212,0.18)] overflow-hidden">
+        <div className="inline-flex items-center justify-center w-40 h-40 rounded-3xl bg-black mb-6 animate-float shadow-[0_0_60px_rgba(204,204,204,0.18)] overflow-hidden">
           <img src="/logo.png" alt="IronLog" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
         </div>
         <p className="text-text-muted tracking-[0.25em] text-sm mt-3 mb-16">TRACK. PROGRESS. DOMINATE.</p>

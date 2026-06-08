@@ -1,28 +1,35 @@
 @import "tailwindcss";
 
+/* ============================================================
+   IronLog — Brushed-steel theme.
+   Black ground, graphite surfaces, white text, silver accents,
+   one desaturated red for danger. Re-skin of the original cyan
+   theme: only COLOR values changed — structure & animations kept.
+   ============================================================ */
+
 @theme {
-  --color-bg: #060B14;
-  --color-bg-card: rgba(255, 255, 255, 0.035);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.06);
-  --color-bg-surface: rgba(255, 255, 255, 0.05);
-  --color-bg-elevated: rgba(255, 255, 255, 0.07);
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-strong: rgba(255, 255, 255, 0.12);
-  --color-border-glow: rgba(6, 182, 212, 0.2);
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #475569;
-  --color-accent: #06B6D4;
-  --color-accent-light: #22D3EE;
-  --color-accent-glow: rgba(6, 182, 212, 0.25);
-  --color-accent-subtle: rgba(6, 182, 212, 0.1);
-  --color-success: #10B981;
-  --color-success-glow: rgba(16, 185, 129, 0.25);
-  --color-warning: #F59E0B;
-  --color-danger: #EF4444;
-  --color-gold: #F59E0B;
-  --color-teal: #14B8A6;
-  --color-purple: #A855F7;
+  --color-bg: #0A0A0A;
+  --color-bg-card: #1A1A1A;
+  --color-bg-card-hover: #222222;
+  --color-bg-surface: #1A1A1A;
+  --color-bg-elevated: #222222;
+  --color-border: #2A2A2A;
+  --color-border-strong: #3A3A3A;
+  --color-border-glow: rgba(204, 204, 204, 0.20);
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #888888;
+  --color-text-muted: #555555;
+  --color-accent: #CCCCCC;
+  --color-accent-light: #E4E4E4;
+  --color-accent-glow: rgba(204, 204, 204, 0.22);
+  --color-accent-subtle: rgba(204, 204, 204, 0.10);
+  --color-success: #6B6B6B;
+  --color-success-glow: rgba(107, 107, 107, 0.30);
+  --color-warning: #B0B0B0;
+  --color-danger: #8B3A3A;
+  --color-gold: #B0B0B0;
+  --color-teal: #9A9A9A;
+  --color-purple: #9A9A9A;
   --font-display: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
@@ -44,17 +51,17 @@
     min-height: 100vh;
     min-height: 100dvh;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.06), transparent),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(6, 182, 212, 0.03), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.045), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255, 255, 255, 0.022), transparent);
     background-attachment: fixed;
   }
   ::-webkit-scrollbar { width: 2px; height: 2px; }
   ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.10); border-radius: 10px; }
   * { -webkit-tap-highlight-color: transparent; }
   input, select, textarea { font-family: inherit; outline: none; }
   button { font-family: inherit; cursor: pointer; }
-  ::selection { background: rgba(6, 182, 212, 0.25); color: white; }
+  ::selection { background: rgba(204, 204, 204, 0.25); color: white; }
 }
 
 @layer utilities {
@@ -68,26 +75,26 @@
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(26, 26, 26, 0.55);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
   .glass-strong {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(26, 26, 26, 0.72);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
   .glass-nav {
-    background: rgba(6, 11, 20, 0.92);
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .glow-accent {
-    box-shadow: 0 0 16px var(--color-accent-glow), 0 0 48px rgba(6, 182, 212, 0.08);
+    box-shadow: 0 0 16px var(--color-accent-glow), 0 0 48px rgba(204, 204, 204, 0.07);
   }
   .glow-success {
     box-shadow: 0 0 12px var(--color-success-glow);
@@ -96,9 +103,11 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
   }
 
+  /* Brushed-steel sheen text — was a gold shimmer */
   .shimmer {
-    background: linear-gradient(90deg, #F59E0B, #FBBF24, #F59E0B) 0/200%;
+    background: linear-gradient(90deg, #BFBFBF, #FFFFFF, #BFBFBF) 0/200%;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 2.5s ease infinite;
   }
@@ -155,8 +164,8 @@
 }
 
 @keyframes pulse-ring {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.35); }
-  70% { box-shadow: 0 0 0 8px rgba(6, 182, 212, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(204, 204, 204, 0.35); }
+  70% { box-shadow: 0 0 0 8px rgba(204, 204, 204, 0); }
 }
 
 @keyframes float {
@@ -211,8 +220,8 @@
 }
 
 @keyframes breathe {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.15); }
-  50% { box-shadow: 0 0 0 6px rgba(6, 182, 212, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(204, 204, 204, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(204, 204, 204, 0); }
 }
 
 @keyframes progressGrow {
@@ -282,7 +291,7 @@
 
 /* ── Recharts overrides ── */
 .recharts-cartesian-grid-horizontal line,
-.recharts-cartesian-grid-vertical line { stroke: rgba(255,255,255,0.03) !important; }
+.recharts-cartesian-grid-vertical line { stroke: rgba(255,255,255,0.04) !important; }
 .recharts-tooltip-wrapper { outline: none !important; }
 
 /* ── Input styling ── */
@@ -290,8 +299,8 @@ input, select, textarea {
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(6, 182, 212, 0.35) !important;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.08), 0 0 12px rgba(6, 182, 212, 0.06);
+  border-color: rgba(204, 204, 204, 0.35) !important;
+  box-shadow: 0 0 0 3px rgba(204, 204, 204, 0.10), 0 0 12px rgba(204, 204, 204, 0.06);
 }
 
 /* ── Number input arrows hide ── */
@@ -302,23 +311,25 @@ input[type=number]::-webkit-inner-spin-button {
 }
 input[type=number] { -moz-appearance: textfield; }
 
-/* ── Light mode ── */
+/* ── Light mode (kept for parity; steel-tinted) ── */
 .light {
-  --color-bg: #F0F4F8;
+  --color-bg: #F0F1F3;
   --color-bg-card: rgba(255, 255, 255, 0.7);
   --color-bg-card-hover: rgba(255, 255, 255, 0.85);
   --color-bg-surface: rgba(255, 255, 255, 0.5);
   --color-bg-elevated: rgba(255, 255, 255, 0.9);
-  --color-border: rgba(0, 0, 0, 0.05);
-  --color-border-strong: rgba(0, 0, 0, 0.08);
-  --color-border-glow: rgba(6, 182, 212, 0.15);
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
-  --color-accent-glow: rgba(6, 182, 212, 0.12);
-  --color-accent-subtle: rgba(6, 182, 212, 0.06);
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-strong: rgba(0, 0, 0, 0.10);
+  --color-border-glow: rgba(120, 120, 120, 0.15);
+  --color-text-primary: #14161A;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+  --color-accent: #6E6E6E;
+  --color-accent-light: #8A8A8A;
+  --color-accent-glow: rgba(110, 110, 110, 0.14);
+  --color-accent-subtle: rgba(110, 110, 110, 0.07);
 }
 .light body {
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.04), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.04), transparent);
 }

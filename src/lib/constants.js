@@ -1,16 +1,18 @@
 export const DAYS = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica']
 export const DAYS_SHORT = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom']
 
+// Brushed-steel re-skin: set-type accents are now steel greys.
+// Only "failure" keeps the desaturated danger red (the lone hue).
 export const SET_TYPES = [
-  { id: 'normal', label: 'Normale', color: '#6366f1' },
-  { id: 'top_set', label: 'Top Set', color: '#f59e0b' },
-  { id: 'back_off', label: 'Back Off', color: '#14b8a6' },
-  { id: 'warm_up', label: 'Warm Up', color: '#94a3b8' },
-  { id: 'drop_set', label: 'Drop Set', color: '#a855f7' },
-  { id: 'amrap', label: 'AMRAP', color: '#ef4444' },
-  { id: 'failure', label: 'Failure', color: '#f43f5e' },
-  { id: 'rest_pause', label: 'Rest Pause', color: '#f97316' },
-  { id: 'custom', label: 'Personalizzato', color: '#64748b' },
+  { id: 'normal', label: 'Normale', color: '#888888' },
+  { id: 'top_set', label: 'Top Set', color: '#E4E4E4' },
+  { id: 'back_off', label: 'Back Off', color: '#888888' },
+  { id: 'warm_up', label: 'Warm Up', color: '#555555' },
+  { id: 'drop_set', label: 'Drop Set', color: '#A0A0A0' },
+  { id: 'amrap', label: 'AMRAP', color: '#B0B0B0' },
+  { id: 'failure', label: 'Failure', color: '#8B3A3A' },
+  { id: 'rest_pause', label: 'Rest Pause', color: '#A0A0A0' },
+  { id: 'custom', label: 'Personalizzato', color: '#6B6B6B' },
 ]
 
 export const REP_RANGES = ['4-6', '6-8', '8-10', '10-12', '12-15', '15-20']
@@ -22,12 +24,13 @@ export const EXPERIENCE_LEVELS = [
   { id: 'expert', label: 'Esperto', desc: '5+ anni' },
 ]
 
+// Phase accents desaturated to the steel ramp (emoji tags kept).
 export const TRAINING_PHASES = [
-  { id: 'bulk', label: 'Massa', icon: '💪', color: '#22c55e', desc: 'Aumento massa muscolare e peso' },
-  { id: 'cut', label: 'Definizione', icon: '🔥', color: '#ef4444', desc: 'Riduzione grasso, mantenere muscolo' },
-  { id: 'strength', label: 'Forza', icon: '🏋️', color: '#f59e0b', desc: 'Focus su carichi pesanti' },
-  { id: 'maintenance', label: 'Mantenimento', icon: '⚖️', color: '#6366f1', desc: 'Mantieni i risultati ottenuti' },
-  { id: 'recomp', label: 'Ricomposizione', icon: '🔄', color: '#a855f7', desc: 'Perdere grasso e costruire muscolo' },
+  { id: 'bulk', label: 'Massa', icon: '💪', color: '#CCCCCC', desc: 'Aumento massa muscolare e peso' },
+  { id: 'cut', label: 'Definizione', icon: '🔥', color: '#B0B0B0', desc: 'Riduzione grasso, mantenere muscolo' },
+  { id: 'strength', label: 'Forza', icon: '🏋️', color: '#E4E4E4', desc: 'Focus su carichi pesanti' },
+  { id: 'maintenance', label: 'Mantenimento', icon: '⚖️', color: '#888888', desc: 'Mantieni i risultati ottenuti' },
+  { id: 'recomp', label: 'Ricomposizione', icon: '🔄', color: '#A0A0A0', desc: 'Perdere grasso e costruire muscolo' },
 ]
 
 // Muscle groups for the recovery grid on the dashboard

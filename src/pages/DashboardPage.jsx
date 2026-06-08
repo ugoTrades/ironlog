@@ -72,7 +72,7 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="flex items-start justify-between mb-6 animate-fade-in">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-black overflow-hidden flex-shrink-0 shadow-[0_0_20px_rgba(6,182,212,0.12)]">
+          <div className="w-12 h-12 rounded-2xl bg-black overflow-hidden flex-shrink-0 shadow-[0_0_20px_rgba(204,204,204,0.12)]">
             <img src="/logo.png" alt="IronLog" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
           </div>
           <div>
@@ -172,7 +172,7 @@ export default function DashboardPage() {
               })
               return (
                 <div key={day} className={`flex-1 text-center rounded-xl py-2 px-0.5 border transition-all duration-300 ${
-                  isToday ? 'bg-accent/10 border-accent/30 shadow-[0_0_12px_rgba(6,182,212,0.12)]'
+                  isToday ? 'bg-accent/10 border-accent/30 shadow-[0_0_12px_rgba(204,204,204,0.12)]'
                   : hasWO ? 'bg-success/8 border-success/20'
                   : 'border-border'
                 }`}>

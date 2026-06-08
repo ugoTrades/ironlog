@@ -34,7 +34,7 @@ export default function BottomNav() {
               <div className="relative">
                 <div className={cn(
                   'transition-all duration-300',
-                  isActive && 'drop-shadow-[0_0_10px_rgba(6,182,212,0.4)]'
+                  isActive && 'drop-shadow-[0_0_10px_rgba(204,204,204,0.4)]'
                 )}>
                   <Icon
                     size={20}
@@ -56,7 +56,7 @@ export default function BottomNav() {
                 {label}
               </span>
               {isActive && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-accent rounded-full shadow-[0_0_8px_rgba(6,182,212,0.5)] animate-scale-in" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-accent rounded-full shadow-[0_0_8px_rgba(204,204,204,0.5)] animate-scale-in" />
               )}
             </NavLink>
           )
